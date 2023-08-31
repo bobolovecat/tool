@@ -18,15 +18,12 @@ const fetchData = require('./timer');
 // })
 
 jest.useFakeTimers();
-jest.spyOn(global, 'setTimeout');
 
 test('计时器模拟', () => {
     function callback(data) {
-        expect(data).toBe('🧋')
+        expect(data).toBe('bilibili')
     }
 
     fetchData(callback);
-
-    // 快进直到所有定时器都执行完毕
     jest.runAllTimers();
 });
