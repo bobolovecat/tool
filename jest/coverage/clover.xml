@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1692846023642" clover="3.2.0">
+  <project timestamp="1692846023642" name="All files">
+    <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2" elements="9" coveredelements="6" complexity="0" loc="5" ncloc="5" packages="1" files="2" classes="2"/>
+    <file name="object.js" path="/Users/yangfeng/project/tool/jest/js/object.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+    </file>
+    <file name="sum.js" path="/Users/yangfeng/project/tool/jest/js/sum.js">
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
