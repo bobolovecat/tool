@@ -1,6 +1,6 @@
-function fetchData() {
-    return new Promise((resolve) => {
-        setTimeout(() => resolve('bilibili'), 10)
+function fetchData(bool) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => { bool ? resolve('bilibili') : reject('error') }, 10)
     })
 }
 
