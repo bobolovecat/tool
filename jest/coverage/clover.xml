@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1692846023642" clover="3.2.0">
-  <project timestamp="1692846023642" name="All files">
-    <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2" elements="9" coveredelements="6" complexity="0" loc="5" ncloc="5" packages="1" files="2" classes="2"/>
-    <file name="object.js" path="/Users/yangfeng/project/tool/jest/js/object.js">
+<coverage generated="1693918385798" clover="3.2.0">
+  <project timestamp="1693918385798" name="All files">
+    <metrics statements="23" coveredstatements="22" conditionals="4" coveredconditionals="4" methods="15" coveredmethods="13" elements="42" coveredelements="39" complexity="0" loc="23" ncloc="23" packages="1" files="6" classes="6"/>
+    <file name="Counter.js" path="/Users/sueyyang/git/other/tool/jest/js/Counter.js">
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+      <line num="3" count="4" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+    </file>
+    <file name="fetch.js" path="/Users/sueyyang/git/other/tool/jest/js/fetch.js">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="2" count="3" type="stmt"/>
+      <line num="3" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="7" count="1" type="stmt"/>
+    </file>
+    <file name="object.js" path="/Users/sueyyang/git/other/tool/jest/js/object.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
     </file>
-    <file name="sum.js" path="/Users/yangfeng/project/tool/jest/js/sum.js">
+    <file name="subtract.js" path="/Users/sueyyang/git/other/tool/jest/js/subtract.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+    </file>
+    <file name="sum.js" path="/Users/sueyyang/git/other/tool/jest/js/sum.js">
       <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
-      <line num="2" count="1" type="stmt"/>
+      <line num="2" count="3" type="stmt"/>
       <line num="6" count="0" type="stmt"/>
       <line num="9" count="1" type="stmt"/>
+    </file>
+    <file name="timer.js" path="/Users/sueyyang/git/other/tool/jest/js/timer.js">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
+      <line num="7" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
