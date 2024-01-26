@@ -1,24 +1,22 @@
-const puppeteer = require('puppeteer-core')
+const puppeteer = require('puppeteer-core');
 
-test()
-
-async function test() {
-    // console.log(puppeteer.executablePath('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'))
-    const browser = puppeteer.launch({
-        headless: true,
-        executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-        // channel: 'stable', //  this will launch the binary installed on the system (might not detect the installation everywhere).
-        // args: [
-        //     // `--proxy-server=http://${message.proxy}`,
-        //     '--disable-features=IsolateOrigins,site-per-process,SitePerProcess',
-        //     '--flag-switches-begin --disable-site-isolation-trials --flag-switches-end',
-        //     `--window-size=1920,1080`,
-        //     "--window-position=000,000",
-        //     "--disable-dev-shm-usage",
-        //     "--no-sandbox",
-        //   ]
+(async () => {
+    const browser = await puppeteer.launch({
+        headless: false,
+        executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
     })
-    console.log(1)
-    await browser.close()
-}
+
+    try {
+        const page = await browser.newPage()
+        await page.goto('https://www.youtube.com/watch?v=qo_fUjb02ns', {
+            waitUtil: 'networkidle2'
+        })
+        // await page.screenshot({ path: "screenshot.png" })
+        await page.pdf({ path: 'youtube.pdf' })
+    } catch (e) {
+        console.error(e)
+    } finally {
+        await browser.close()
+    }
+})()
 
