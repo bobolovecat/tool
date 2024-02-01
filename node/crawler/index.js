@@ -45,12 +45,10 @@ const fs = require('fs');
             }));
         });
         
-        // fs.writeFile('./data.json', JSON.stringify(data), function (err) {
-        //     if (err) {
-        //         throw err
-        //     }
-        //     console.log('文件保存成功')
-        // })
+        fs.writeFile('./data.json', JSON.stringify(data), err => {
+            if (err) throw err
+            console.log('文件保存成功')
+        })
     } catch (e) {
         console.error(e)
     } finally {
