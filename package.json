@@ -1,9 +1,11 @@
 {
   "name": "tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "https://github.com/bobolovecat/tool.git",
   "author": "bobolovecat <youngmaple@qq.com>",
   "license": "MIT",
-  "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  }
 }
