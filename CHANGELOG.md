@@ -1,10 +1,11 @@
-## 1.0.3 (2024-03-30)
+## [1.0.4](https://github.com/bobolovecat/tool/compare/5514d6120dfa60fbc6722df964661e0eef41504b...v1.0.4) (2024-03-31)
 
 
 ### Features
 
 * callback ([5514d61](https://github.com/bobolovecat/tool/commit/5514d6120dfa60fbc6722df964661e0eef41504b))
 * crawler ([0d96fc7](https://github.com/bobolovecat/tool/commit/0d96fc7a258bad7387c4b2f3d9541d98dff9a3d5))
+* **crawler:** headless设置 ([67b3712](https://github.com/bobolovecat/tool/commit/67b3712b31668eab9cd3cc122697dbb269c4f1cb))
 * **crawler:** launch ([917820c](https://github.com/bobolovecat/tool/commit/917820c66b183035e0455a93c05b9c7d1d64addc))
 * **crawler:** screenshot ([c5f76f8](https://github.com/bobolovecat/tool/commit/c5f76f80ca9cc49a11cc3f5e5242b63e96d0e26c))
 * **crawler:** writeFile ([08934fc](https://github.com/bobolovecat/tool/commit/08934fc22564c9deb3dc4fc4dc4ae3d8be0f898d))
