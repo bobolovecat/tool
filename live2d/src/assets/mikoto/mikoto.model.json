@@ -11,82 +11,103 @@
     "width": 2.6
   },
   "motions": {
-    "tap": [
+    "motion1": [
       {
         "file": "motions/tap/motion1.mtn"
-      },
-      {
-        "file": "motions/tap/motion10.mtn"
-      },
-      {
-        "file": "motions/tap/motion11.mtn"
-      },
-      {
-        "file": "motions/tap/motion12.mtn"
-      },
-      {
-        "file": "motions/tap/motion13.mtn"
-      },
-      {
-        "file": "motions/tap/motion14.mtn"
-      },
+      }
+    ],
+    "motion2": [
       {
         "file": "motions/tap/motion2.mtn"
-      },
+      }
+    ],
+    "motion3": [
       {
         "file": "motions/tap/motion3.mtn"
-      },
+      }
+    ],
+    "motion4": [
       {
         "file": "motions/tap/motion4.mtn"
-      },
+      }
+    ],
+    "motion5": [
       {
         "file": "motions/tap/motion5.mtn"
-      },
+      }
+    ],
+    "motion6": [
       {
         "file": "motions/tap/motion6.mtn"
-      },
+      }
+    ],
+    "motion7": [
       {
         "file": "motions/tap/motion7.mtn"
-      },
+      }
+    ],
+    "motion8": [
       {
         "file": "motions/tap/motion8.mtn"
-      },
+      }
+    ],
+    "motion9": [
       {
         "file": "motions/tap/motion9.mtn"
+      }
+    ],
+    "motion10": [
+      {
+        "file": "motions/tap/motion10.mtn"
+      }
+    ],
+    "motion11": [
+      {
+        "file": "motions/tap/motion11.mtn"
+      }
+    ],
+    "motion12": [
+      {
+        "file": "motions/tap/motion12.mtn"
+      }
+    ],
+    "motion13": [
+      {
+        "file": "motions/tap/motion13.mtn"
       }
     ]
   },
   "expressions": [
     {
-      "name": "f01.exp.json",
+      "name": "f01",
       "file": "expressions/f01.exp.json"
     },
     {
-      "name": "f02.exp.json",
+      "name": "f02",
       "file": "expressions/f02.exp.json"
     },
     {
-      "name": "f03.exp.json",
+      "name": "f03",
       "file": "expressions/f03.exp.json"
     },
     {
-      "name": "f04.exp.json",
+      "name": "f04",
       "file": "expressions/f04.exp.json"
     },
     {
-      "name": "f05.exp.json",
+      "name": "f05",
       "file": "expressions/f05.exp.json"
     },
     {
-      "name": "f06.exp.json",
+      "name": "f06",
       "file": "expressions/f06.exp.json"
     },
     {
-      "name": "f07.exp.json",
+      "name": "f07",
       "file": "expressions/f07.exp.json"
     },
     {
-      "name": "f08.exp.json",
+      "name": "f08",
       "file": "expressions/f08.exp.json"
     }
   ],
