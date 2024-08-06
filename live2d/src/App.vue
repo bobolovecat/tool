@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeMount, onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import axios from 'axios'
 import * as PIXI from 'pixi.js'
 import {
