@@ -6,7 +6,7 @@ import { Live2DModel } from 'pixi-live2d-display';
 window.PIXI = PIXI;
 
 const canvas = ref(null)
-const audioFile = 'https://image-1251917893.file.myqcloud.com/tip-project/live2d/audio/out3.ogg';
+const audioFile = '../../src/assets/sounds/sound.wav';
 
 let app;
 let model;
@@ -28,7 +28,7 @@ async function speaking() {
   analyser.connect(audioContext.destination);
   source.connect(analyser);
 
-  source.start();
+  source.start(0);
 
   const updateMouth = () => {
     const dataArray = new Uint8Array(analyser.frequencyBinCount);
