@@ -59,8 +59,8 @@ onMounted(async () => {
   audioContext = new AudioContext()
   app = new PIXI.Application({
     view: canvas.value,
-    height: window.innerHeight,
-    width: window.innerWidth,
+    height: 500,
+    width: 350,
     autoDensity: true,
     antialias: true,
     resolution: window.devicePixelRatio,
@@ -68,7 +68,9 @@ onMounted(async () => {
   });
   model = await Live2DModel.from('../../src/assets/mikoto/mikoto.model.json')
   app.stage.addChild(model)
-  model.scale.set(.6)
+  model.scale.set(.5)
+  model.y = -150
+  model.x = -150
 })
 
 onBeforeUnmount(() => {
