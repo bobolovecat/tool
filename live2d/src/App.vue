@@ -40,7 +40,8 @@ async function speaking() {
     model.internalModel.coreModel.setParamFloat('PARAM_MOUTH_OPEN_Y', mouthOpen);
 
     if (audioContext.state !== 'closed') {
-      requestAnimationFrame(updateMouth);
+      // requestAnimationFrame(updateMouth);
+      setTimeout(updateMouth, 1000 / 30);
     }
   };
 
