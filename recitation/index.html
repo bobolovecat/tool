@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>面试题随机练习系统</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      :root {
+        --primary-color: #4361ee;
+        --secondary-color: #3f37c9;
+        --accent-color: #4cc9f0;
+        --light-color: #f8f9fa;
+        --dark-color: #212529;
+        --success-color: #4caf50;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        padding: 20px;
+        color: var(--dark-color);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+        position: relative;
+        display: inline-block;
+      }
+
+      h1:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+        border-radius: 4px;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+        color: #6c757d;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .app-container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 25px;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        min-height: 600px;
+      }
+
+      .sidebar {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 25px 15px;
+      }
+
+      .category-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .category-title i {
+        margin-right: 10px;
+        font-size: 1.4rem;
+      }
+
+      .categories {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .category {
+        padding: 12px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+      }
+
+      .category:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .category.active {
+        background-color: white;
+        color: var(--primary-color);
+        font-weight: 600;
+        box-shadow: var(--shadow);
+      }
+
+      .category i {
+        margin-right: 10px;
+        font-size: 1.1rem;
+      }
+
+      .main-content {
+        padding: 30px 40px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .info-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 15px;
+      }
+
+      .question-counter {
+        font-size: 0.9rem;
+        color: #6c757d;
+        background: #f1f4f9;
+        padding: 8px 15px;
+        border-radius: 20px;
+        min-width: 220px;
+      }
+
+      .category-indicator {
+        font-size: 0.85rem;
+        color: var(--primary-color);
+        background: rgba(67, 97, 238, 0.1);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-weight: 500;
+      }
+
+      .question-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        padding: 35px 40px;
+        margin-bottom: 30px;
+        position: relative;
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .question-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .question-tag {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--accent-color);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .question-content {
+        font-size: 1.25rem;
+        line-height: 1.7;
+        padding-right: 25px;
+        margin-bottom: 10px;
+      }
+
+      .question-id {
+        font-size: 0.9rem;
+        color: #adb5bd;
+        margin-top: 20px;
+        text-align: right;
+      }
+
+      .answer-card {
+        background: var(--light-color);
+        border-left: 4px solid var(--success-color);
+        padding: 25px 30px;
+        border-radius: 8px;
+        display: none;
+      }
+
+      .answer-title {
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: var(--success-color);
+        display: flex;
+        align-items: center;
+      }
+
+      .answer-title i {
+        margin-right: 10px;
+      }
+
+      .answer-content {
+        line-height: 1.6;
+      }
+
+      .controls {
+        display: flex;
+        gap: 15px;
+        margin-top: auto;
+        padding: 20px 0;
+      }
+
+      .btn {
+        padding: 14px 28px;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+      }
+
+      .btn-outline:hover {
+        background-color: rgba(67, 97, 238, 0.1);
+      }
+
+      .btn i {
+        margin-right: 8px;
+      }
+
+      .placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+        padding: 40px;
+        color: #6c757d;
+      }
+
+      .placeholder i {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        color: var(--accent-color);
+      }
+
+      .placeholder h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: var(--secondary-color);
+      }
+
+      .placeholder p {
+        max-width: 500px;
+        line-height: 1.6;
+      }
+
+      .spinner {
+        display: none;
+        width: 40px;
+        height: 40px;
+        margin: 20px auto;
+        border: 4px solid rgba(67, 97, 238, 0.2);
+        border-top: 4px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .animation-container {
+        perspective: 1000px;
+      }
+
+      .data-info {
+        text-align: center;
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #e9ecef;
+      }
+
+      /* 响应式设计 */
+      @media (max-width: 768px) {
+        .app-container {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        .question-card {
+          padding: 25px;
+        }
+
+        .controls {
+          flex-direction: column;
+        }
+
+        .info-bar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>面试题随机练习系统</h1>
+        <p class="subtitle">选择分类，随机出题检验你的知识掌握程度，数据存储在外部JSON文件</p>
+      </header>
+
+      <div class="app-container">
+        <div class="sidebar">
+          <div class="category-title">
+            <i class="fas fa-folder"></i>
+            <h2>题目分类</h2>
+          </div>
+          <div class="categories">
+            <div class="category active" data-category="all">
+              <i class="fas fa-star"></i>
+              全部题目
+            </div>
+            <div class="category" data-category="network">
+              <i class="fas fa-network-wired"></i>
+              网络原理
+            </div>
+            <div class="category" data-category="framework">
+              <i class="fas fa-layer-group"></i>
+              前端框架
+            </div>
+            <div class="category" data-category="javascript">
+              <i class="fab fa-js"></i>
+              JavaScript
+            </div>
+            <div class="category" data-category="html-css">
+              <i class="fab fa-html5"></i>
+              HTML/CSS
+            </div>
+            <div class="category" data-category="algorithm">
+              <i class="fas fa-sort-amount-down"></i>
+              算法与数据结构
+            </div>
+            <div class="category" data-category="browser">
+              <i class="fas fa-window-maximize"></i>
+              浏览器原理
+            </div>
+          </div>
+        </div>
+
+        <div class="main-content">
+          <div class="info-bar">
+            <div class="question-counter" id="questionCounter">正在加载题库...</div>
+            <div class="category-indicator" id="categoryIndicator">当前分类: 全部</div>
+          </div>
+
+          <div id="questionContainer">
+            <div class="placeholder">
+              <i class="fas fa-file-alt"></i>
+              <h3>加载面试题库</h3>
+              <p>系统正在从外部JSON文件加载面试题库...</p>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="btn btn-primary" id="randomQuestionBtn" disabled>
+              <i class="fas fa-random"></i> 随机出题
+            </button>
+            <button class="btn btn-outline" id="showAnswerBtn" disabled>
+              <i class="fas fa-eye"></i> 查看答案
+            </button>
+          </div>
+
+          <div class="data-info">
+            <p>
+              <i class="fas fa-database"></i> 题库数据来自外部JSON文件：<code>questions.json</code>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spinner" id="loadingSpinner"></div>
+
+    <script>
+      // DOM元素引用
+      const categoryElements = document.querySelectorAll('.category')
+      const randomQuestionBtn = document.getElementById('randomQuestionBtn')
+      const showAnswerBtn = document.getElementById('showAnswerBtn')
+      const questionContainer = document.getElementById('questionContainer')
+      const questionCounter = document.getElementById('questionCounter')
+      const categoryIndicator = document.getElementById('categoryIndicator')
+      const loadingSpinner = document.getElementById('loadingSpinner')
+
+      // 全局状态
+      let questionBank = [] // 存储所有题目
+      let currentCategory = 'all'
+      let currentQuestion = null
+
+      // 显示加载状态
+      function showLoading() {
+        loadingSpinner.style.display = 'block'
+        randomQuestionBtn.disabled = true
+      }
+
+      // 隐藏加载状态
+      function hideLoading() {
+        loadingSpinner.style.display = 'none'
+        randomQuestionBtn.disabled = false
+      }
+
+      // 显示错误消息
+      function showError(message) {
+        questionContainer.innerHTML = `
+                <div class="placeholder">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>加载失败</h3>
+                    <p>${message}</p>
+                    <button class="btn btn-primary" id="retryBtn" style="margin-top: 20px;">
+                        <i class="fas fa-sync-alt"></i> 重试
+                    </button>
+                </div>
+            `
+
+        document.getElementById('retryBtn').addEventListener('click', loadQuestions)
+      }
+
+      // 从JSON文件加载面试题库
+      async function loadQuestions() {
+        showLoading()
+
+        try {
+          const response = await fetch('questions.json')
+          if (!response.ok) {
+            throw new Error(`加载题库失败: ${response.status} ${response.statusText}`)
+          }
+
+          questionBank = await response.json()
+          initializeApp()
+          hideLoading()
+        } catch (error) {
+          console.error('题库加载错误:', error)
+          hideLoading()
+          showError(`加载题库失败: ${error.message}<br>请检查JSON文件路径是否正确`)
+        }
+      }
+
+      // 初始化应用程序
+      function initializeApp() {
+        if (questionBank.length === 0) {
+          showError('题库为空，请确保JSON文件中有题目数据')
+          return
+        }
+
+        updateQuestionCounter()
+        setupCategorySelector()
+
+        // 显示欢迎消息
+        questionContainer.innerHTML = `
+                <div class="placeholder">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>题库加载完成</h3>
+                    <p>已加载 ${questionBank.length} 道面试题，请选择分类并点击"随机出题"按钮开始练习。</p>
+                </div>
+            `
+
+        // 激活随机出题按钮
+        randomQuestionBtn.disabled = false
+      }
+
+      // 设置分类选择器
+      function setupCategorySelector() {
+        categoryElements.forEach((category) => {
+          category.addEventListener('click', () => {
+            // 更新UI状态
+            categoryElements.forEach((c) => c.classList.remove('active'))
+            category.classList.add('active')
+
+            // 更新当前分类
+            currentCategory = category.dataset.category
+
+            // 更新分类指示器
+            updateCategoryIndicator()
+
+            // 更新问题计数显示
+            updateQuestionCounter()
+
+            // 重置问题显示
+            resetQuestionDisplay()
+          })
+        })
+      }
+
+      // 随机出题逻辑
+      function generateRandomQuestion() {
+        // 获取当前选中的分类
+        const selectedCategory = currentCategory
+
+        // 从题库中获取问题
+        const questions =
+          selectedCategory === 'all'
+            ? questionBank
+            : questionBank.filter((q) => q.category === selectedCategory)
+
+        if (questions.length === 0) {
+          questionContainer.innerHTML = `
+                    <div class="placeholder">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>未找到题目</h3>
+                        <p>所选分类中没有可用的题目，请尝试选择其他分类。</p>
+                    </div>
+                `
+          showAnswerBtn.disabled = true
+          return
+        }
+
+        // 随机选择一个题目
+        const randomIndex = Math.floor(Math.random() * questions.length)
+        currentQuestion = questions[randomIndex]
+
+        // 显示题目
+        displayQuestion(currentQuestion)
+
+        // 启查看答案按钮
+        showAnswerBtn.disabled = false
+      }
+
+      // 显示问题函数
+      function displayQuestion(question) {
+        // 获取分类名称映射
+        const categoryName = getCategoryName(question.category)
+
+        questionContainer.innerHTML = `
+                <div class="animation-container">
+                    <div class="question-card">
+                        <div class="question-tag">${categoryName}</div>
+                        <div class="question-content">${question.question}</div>
+                        <div class="question-id">题目ID: ${question.id}</div>
+                    </div>
+                    <div class="answer-card">
+                        <div class="answer-title"><i class="fas fa-check-circle"></i> 参考答案</div>
+                        <div class="answer-content">${question.answer}</div>
+                    </div>
+                </div>
+            `
+      }
+
+      // 重置问题显示
+      function resetQuestionDisplay() {
+        questionContainer.innerHTML = `
+                <div class="placeholder">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>选择题目分类</h3>
+                    <p>点击"随机出题"按钮将从"${getCategoryName(
+                      currentCategory
+                    )}"分类中随机抽取题目。</p>
+                </div>
+            `
+        showAnswerBtn.disabled = true
+      }
+
+      // 更新问题计数显示
+      function updateQuestionCounter() {
+        if (currentCategory === 'all') {
+          questionCounter.textContent = `全部题库: ${questionBank.length} 题`
+        } else {
+          const categoryCount = questionBank.filter((q) => q.category === currentCategory).length
+          questionCounter.textContent = `${getCategoryName(currentCategory)}: ${categoryCount} 题`
+        }
+      }
+
+      // 更新分类指示器
+      function updateCategoryIndicator() {
+        categoryIndicator.textContent = `当前分类: ${getCategoryName(currentCategory)}`
+      }
+ 
+      // 获取分类名称
+      function getCategoryName(category) {
+        const names = {
+          network: '网络原理',
+          framework: '前端框架',
+          javascript: 'JavaScript',
+          'html-css': 'HTML/CSS',
+          algorithm: '算法与数据结构',
+          browser: '浏览器原理',
+          all: '全部'
+        }
+        return names[category] || category
+      }
+
+      // 事件监听器设置
+      function setupEventListeners() {
+        // 随机出题按钮事件
+        randomQuestionBtn.addEventListener('click', () => {
+          generateRandomQuestion()
+        })
+
+        // 显示答案按钮事件
+        showAnswerBtn.addEventListener('click', () => {
+          if (!currentQuestion) return
+
+          // 显示答案
+          const answerCard = document.querySelector('.answer-card')
+          if (answerCard) {
+            answerCard.style.display = 'block'
+
+            // 滚动到答案位置
+            answerCard.scrollIntoView({ behavior: 'smooth', block: 'center' })
+
+            // 禁用按钮
+            showAnswerBtn.disabled = true
+          }
+        })
+      }
+
+      // 页面加载完成后初始化
+      window.addEventListener('DOMContentLoaded', () => {
+        setupEventListeners()
+        loadQuestions()
+      })
+    </script>
+  </body>
+</html>
