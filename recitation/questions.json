@@ -88,5 +88,62 @@
     "category": "javascript",
     "question": "null",
     "answer": "<iframe src='https://dull-tithonia-918.notion.site/ebd/2581142cbec2808bbf53ff1c66b391cb' width='100%' height='600px' frameborder='0' allowfullscreen />"
+  },
+  {
+    "id": 16,
+    "category": "javascript",
+    "question": "typeof & instanceof",
+    "answer": "<iframe src='https://dull-tithonia-918.notion.site/ebd/2591142cbec280afa1f1f06c7cea3d39' width='100%' height='600px' frameborder='0' allowfullscreen />"
+  },
+  {
+    "id": 17,
+    "category": "javascript",
+    "question": "实现一个 bind 函数",
+    "answer": "<iframe src='https://dull-tithonia-918.notion.site/ebd/2591142cbec280a88bd4ea6d1ebe657d' width='100%' height='600px' frameborder='0' allowfullscreen />"
+  },
+  {
+    "id": 18,
+    "category": "javascript",
+    "question": "事件循环（Event Loop）",
+    "answer": "<iframe src='https://dull-tithonia-918.notion.site/ebd/2591142cbec2807d9b11ec8e02ea9c8d' width='100%' height='600px' frameborder='0' allowfullscreen />"
+  },
+  {
+    "id": 19,
+    "category": "javascript",
+    "question": "JS 原始类型和引用数据类型",
+    "answer": "<iframe src='https://dull-tithonia-918.notion.site/ebd/2761142cbec2805ea33fcbd4e0145b71' width='100%' height='600px' frameborder='0' allowfullscreen />"
+  },
+  {
+    "id": 20,
+    "category": "javascript",
+    "question": "'1'.toString() 为什么可以调用？",
+    "answer": "<iframe src='https://dull-tithonia-918.notion.site/ebd/2791142cbec2801ba076d072da3b160c' width='100%' height='600px' frameborder='0' allowfullscreen />"
+  },
+  {
+    "id": 21,
+    "category": "javascript",
+    "question": "0.1+0.2 为什么不等于 0.3",
+    "answer": "<iframe src='https://dull-tithonia-918.notion.site/ebd/27a1142cbec280ca8e79ffad540b535e' width='100%' height='600px' frameborder='0' allowfullscreen />"
+  },
+  {
+    "id": 22,
+    "category": "javascript",
+    "question": "什么是BigInt？为什么需要BigInt",
+    "answer": "<iframe src='https://dull-tithonia-918.notion.site/ebd/2931142cbec280c892b1cf344bb5191a' width='100%' height='600px' frameborder='0' allowfullscreen />"
+  },
+  {
+    "id": 23,
+    "category": "javascript",
+    "question": "手动实现 instanceof",
+    "answer": "<iframe src='https://dull-tithonia-918.notion.site/ebd/29a1142cbec280bfb4adc20c3374b9ba' width='100%' height='600px' frameborder='0' allowfullscreen />"
+  },
+
+
+
+  {
+    "id": 24,
+    "category": "optimization",
+    "question": "如何实现 H5 秒开",
+    "answer": "<iframe src='https://dull-tithonia-918.notion.site/ebd/2591142cbec2805a9818ea31c004ff6e' width='100%' height='600px' frameborder='0' allowfullscreen />"
   }
 ]
